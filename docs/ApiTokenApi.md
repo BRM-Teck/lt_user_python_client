@@ -1,6 +1,6 @@
 # lt_user_client.ApiTokenApi
 
-All URIs are relative to *http://127.0.0.1:8000*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,9 +8,8 @@ Method | HTTP request | Description
 [**api_token_refresh_create**](ApiTokenApi.md#api_token_refresh_create) | **POST** /api-token/refresh | 
 [**api_token_verify_create**](ApiTokenApi.md#api_token_verify_create) | **POST** /api-token/verify | 
 
-
 # **api_token_create**
-> TokenObtainPair api_token_create(data)
+> TokenObtainPair api_token_create(body)
 
 
 
@@ -24,17 +23,12 @@ import lt_user_client
 from lt_user_client.rest import ApiException
 from pprint import pprint
 
-# Configure HTTP basic authorization: Basic
-configuration = lt_user_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
 # create an instance of the API class
-api_instance = lt_user_client.ApiTokenApi(lt_user_client.ApiClient(configuration))
-data = lt_user_client.TokenObtainPair() # TokenObtainPair | 
+api_instance = lt_user_client.ApiTokenApi()
+body = lt_user_client.TokenObtainPairRequest() # TokenObtainPairRequest | 
 
 try:
-    api_response = api_instance.api_token_create(data)
+    api_response = api_instance.api_token_create(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiTokenApi->api_token_create: %s\n" % e)
@@ -44,7 +38,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**TokenObtainPair**](TokenObtainPair.md)|  | 
+ **body** | [**TokenObtainPairRequest**](TokenObtainPairRequest.md)|  | 
 
 ### Return type
 
@@ -52,17 +46,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api_token_refresh_create**
-> TokenRefresh api_token_refresh_create(data)
+> TokenRefresh api_token_refresh_create(body)
 
 
 
@@ -76,17 +70,12 @@ import lt_user_client
 from lt_user_client.rest import ApiException
 from pprint import pprint
 
-# Configure HTTP basic authorization: Basic
-configuration = lt_user_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
 # create an instance of the API class
-api_instance = lt_user_client.ApiTokenApi(lt_user_client.ApiClient(configuration))
-data = lt_user_client.TokenRefresh() # TokenRefresh | 
+api_instance = lt_user_client.ApiTokenApi()
+body = lt_user_client.TokenRefreshRequest() # TokenRefreshRequest | 
 
 try:
-    api_response = api_instance.api_token_refresh_create(data)
+    api_response = api_instance.api_token_refresh_create(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ApiTokenApi->api_token_refresh_create: %s\n" % e)
@@ -96,7 +85,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**TokenRefresh**](TokenRefresh.md)|  | 
+ **body** | [**TokenRefreshRequest**](TokenRefreshRequest.md)|  | 
 
 ### Return type
 
@@ -104,17 +93,17 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **api_token_verify_create**
-> TokenVerify api_token_verify_create(data)
+> api_token_verify_create(body)
 
 
 
@@ -128,18 +117,12 @@ import lt_user_client
 from lt_user_client.rest import ApiException
 from pprint import pprint
 
-# Configure HTTP basic authorization: Basic
-configuration = lt_user_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
-
 # create an instance of the API class
-api_instance = lt_user_client.ApiTokenApi(lt_user_client.ApiClient(configuration))
-data = lt_user_client.TokenVerify() # TokenVerify | 
+api_instance = lt_user_client.ApiTokenApi()
+body = lt_user_client.TokenVerifyRequest() # TokenVerifyRequest | 
 
 try:
-    api_response = api_instance.api_token_verify_create(data)
-    pprint(api_response)
+    api_instance.api_token_verify_create(body)
 except ApiException as e:
     print("Exception when calling ApiTokenApi->api_token_verify_create: %s\n" % e)
 ```
@@ -148,20 +131,20 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**TokenVerify**](TokenVerify.md)|  | 
+ **body** | [**TokenVerifyRequest**](TokenVerifyRequest.md)|  | 
 
 ### Return type
 
-[**TokenVerify**](TokenVerify.md)
+void (empty response body)
 
 ### Authorization
 
-[Basic](../README.md#Basic)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
